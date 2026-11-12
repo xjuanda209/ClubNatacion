@@ -4,7 +4,18 @@ Worker: `sermasclubnatacion` · Cuenta: `649998aad1a7c374fbcd7820e820c434`.
 Sitio: https://sermasclubnatacion.xjuancho16.workers.dev
 Repositorio existente: https://github.com/xjuanda209/ClubNatacion
 
-## Conectar GitHub al Worker existente
+## Estado actual
+
+La integración de **Workers Builds está conectada** desde el 12 de noviembre de 2026:
+`xjuanda209/ClubNatacion`, rama `main`, publica en el Worker existente
+`sermasclubnatacion`. Los builds están habilitados; las vistas previas de otras
+ramas están desactivadas. La aplicación de GitHub tiene acceso únicamente a
+`ClubNatacion`. El token de compilación fue generado y almacenado por Cloudflare.
+
+Cada `git push origin main` inicia una compilación y despliegue. Puedes revisar el
+resultado en **Workers & Pages → sermasclubnatacion → Deployments**.
+
+## Referencia de la conexión (ya configurada)
 
 En [el Worker](https://dash.cloudflare.com/649998aad1a7c374fbcd7820e820c434/workers/services/view/sermasclubnatacion/production),
 abre **Settings → Builds → GitHub** (en algunas versiones aparece **Connect**).
@@ -14,8 +25,8 @@ pulsa **Install & Authorize**. La aplicación es **Cloudflare Workers and Pages*
 solicita lectura de metadatos y lectura/escritura de administración, checks,
 código, despliegues y pull requests para ese repositorio.
 
-El código ya está en GitHub. La primera vinculación queda pendiente de esta
-autorización: tener ambas aplicaciones conectadas a Codex no la sustituye.
+El código fuente ya está en GitHub y la autorización está completada. Tener ambas
+aplicaciones conectadas a Codex es independiente de esta integración de despliegue.
 
 | Campo | Valor |
 | --- | --- |
@@ -30,8 +41,8 @@ autorización: tener ambas aplicaciones conectadas a Codex no la sustituye.
 | API token | Generado automáticamente por Cloudflare |
 | Despliegues de otras ramas / Previews | Desactivados para esta primera configuración |
 
-Guarda con **Connect / Save and deploy**. Si no comienza una compilación, usa
-**Deployments → Retry deployment / Build** o haz un nuevo commit y push a `main`.
+Al reconstruir la conexión, guarda con **Connect**. Para iniciar la primera
+compilación después de conectar, haz un nuevo commit y push a `main`.
 Confirma que la compilación termine correctamente y que el sitio conserve las seis páginas.
 
 El nombre en `wrangler.jsonc` coincide con el Worker existente. Se publica `dist/`

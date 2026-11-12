@@ -38,7 +38,8 @@ y ajusta `SITE_URL`. Es opcional; no se necesitan secretos para compilar.
 ## Publicar cambios
 
 El remoto es https://github.com/xjuanda209/ClubNatacion, rama `main`.
-Una vez conectada la integración de Workers Builds descrita en [DEPLOY.md](DEPLOY.md):
+**Workers Builds ya está conectado al Worker `sermasclubnatacion`.** Cada push a
+`main` compila y publica el sitio automáticamente. Configuración en [DEPLOY.md](DEPLOY.md).
 
 ```powershell
 git add public scripts package.json package-lock.json wrangler.jsonc README.md DEPLOY.md docs
