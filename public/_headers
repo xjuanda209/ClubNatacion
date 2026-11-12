@@ -1,0 +1,12 @@
+# Cabeceras del sitio (las leen Cloudflare Pages y Netlify).
+# X-Robots-Tag: mientras sea vista previa para el cliente, Google no la indexa
+# (hay textos y direcciones por confirmar). "npm run build:produccion" quita esa línea.
+/*
+  X-Robots-Tag: noindex
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# las fotos casi no cambian: el navegador las guarda una semana
+/assets/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
