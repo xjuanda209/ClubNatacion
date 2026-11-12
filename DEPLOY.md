@@ -7,9 +7,15 @@ Repositorio existente: https://github.com/xjuanda209/ClubNatacion
 ## Conectar GitHub al Worker existente
 
 En [el Worker](https://dash.cloudflare.com/649998aad1a7c374fbcd7820e820c434/workers/services/view/sermasclubnatacion/production),
-abre **Settings → Builds → Connect**. No crees otro Worker ni un proyecto de Pages.
-Si Cloudflare lo solicita, autoriza su aplicación de GitHub para el repositorio
-`xjuanda209/ClubNatacion` desde la ventana de GitHub.
+abre **Settings → Builds → GitHub** (en algunas versiones aparece **Connect**).
+No crees otro Worker ni un proyecto de Pages.
+En GitHub selecciona **Only select repositories → xjuanda209/ClubNatacion** y
+pulsa **Install & Authorize**. La aplicación es **Cloudflare Workers and Pages**;
+solicita lectura de metadatos y lectura/escritura de administración, checks,
+código, despliegues y pull requests para ese repositorio.
+
+El código ya está en GitHub. La primera vinculación queda pendiente de esta
+autorización: tener ambas aplicaciones conectadas a Codex no la sustituye.
 
 | Campo | Valor |
 | --- | --- |
