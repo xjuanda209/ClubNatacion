@@ -40,6 +40,12 @@ npm run check    # genera tipos, ejecuta pruebas y valida sin publicar
 La URL pública ya está configurada. Para cambiarla, copia `.env.example` a `.env`
 y ajusta `SITE_URL`. Es opcional; no se necesitan secretos para compilar.
 
+`.env` se usa para la configuración del build; el único valor que este proyecto
+lleva al sitio es la URL pública `SITE_URL`. Guarda los secretos del backend en
+`.dev.vars` local y como **Secrets** en Cloudflare. Ambos archivos privados están
+excluidos de Git. No pongas credenciales, exportaciones ni datos de usuarios en
+`public/`. Guarda las copias de la base en `backups/`, también excluida.
+
 ## Publicar cambios
 
 El remoto es https://github.com/xjuanda209/ClubNatacion, rama `main`.

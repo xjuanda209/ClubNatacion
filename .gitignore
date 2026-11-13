@@ -23,6 +23,17 @@ worker-configuration.d.ts
 credentials*.json
 secrets*.json
 
+# Copias y exportaciones con datos (las migraciones SQL sí se versionan)
+/backups/
+/exports/
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.dump
+
 # Material privado, originales y comprobaciones locales
 /Piscinas 2/
 /material-local/

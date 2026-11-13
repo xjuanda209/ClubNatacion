@@ -13,6 +13,20 @@
 El ID de la base es configuración pública, no una contraseña. El Worker accede
 mediante el binding de Cloudflare; el navegador no se conecta directamente a D1.
 
+## Secretos y datos privados
+
+- `.env` y `.dev.vars` están excluidos de Git; `.env.example` contiene únicamente
+  la URL pública del sitio. Ninguna contraseña de D1 es necesaria.
+- Los secretos futuros del backend se configuran localmente en `.dev.vars` y en
+  producción en **Worker → Settings → Variables and Secrets → Secret**.
+- `public/` contiene archivos accesibles en Internet. Los datos personales,
+  credenciales, copias y exportaciones deben permanecer fuera de esa carpeta.
+- `backups/`, `exports/` y archivos SQLite están ignorados por Git.
+- Los logs del Worker ocultan los parámetros de la URL (`redact_query_string`).
+- La comprobación `/api/health` no devuelve filas, errores SQL ni datos personales.
+  El CRUD deberá incorporar autenticación y autorización antes de exponer operaciones
+  sobre usuarios; actualmente esas rutas devuelven 404.
+
 ## Tabla inicial: users
 
 | Columna | Tipo y comportamiento |
