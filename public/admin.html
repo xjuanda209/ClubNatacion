@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Administración · Team SER+</title>
+  <meta name="theme-color" content="#071a45">
+  <link rel="icon" type="image/png" href="assets/plus.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Azeret+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="adm">
+
+  <!-- ============ ENTRADA ============ -->
+  <main class="gate" id="vGate">
+    <div class="gate__card">
+      <a class="gate__brand" href="index.html"><img src="assets/logo-white.webp" alt="Team SER+ Club Deportivo" width="967" height="528"></a>
+
+      <p class="gate__msg" id="gateWait">Comprobando la sesión…</p>
+
+      <form class="gate__form" id="fLogin" hidden novalidate>
+        <h1>Administración</h1>
+        <p class="gate__lead">Acceso exclusivo del club.</p>
+        <label>Correo
+          <input name="correo" type="email" autocomplete="username" required maxlength="254">
+        </label>
+        <label>Contraseña
+          <input name="clave" type="password" autocomplete="current-password" required maxlength="128">
+        </label>
+        <p class="gate__err" role="alert" hidden></p>
+        <button class="b b--red" type="submit">Entrar</button>
+      </form>
+
+      <form class="gate__form" id="fSetup" hidden novalidate>
+        <h1>Crear la cuenta del administrador</h1>
+        <p class="gate__lead">Solo se hace una vez. Necesitas el código de configuración que se generó al instalar el sitio.</p>
+        <label>Código de configuración
+          <input name="token" type="password" autocomplete="off" required maxlength="200">
+        </label>
+        <label>Correo del administrador
+          <input name="correo" type="email" autocomplete="username" required maxlength="254">
+        </label>
+        <label>Contraseña <small>(mínimo 12 caracteres)</small>
+          <input name="clave" type="password" autocomplete="new-password" required minlength="12" maxlength="128">
+        </label>
+        <label>Repite la contraseña
+          <input name="clave2" type="password" autocomplete="new-password" required minlength="12" maxlength="128">
+        </label>
+        <p class="gate__err" role="alert" hidden></p>
+        <button class="b b--red" type="submit">Crear cuenta y entrar</button>
+      </form>
+
+      <p class="gate__foot">Este panel usa una sola cookie de sesión, necesaria para mantenerte dentro. <a href="privacidad.html">Política de datos</a></p>
+    </div>
+  </main>
+
+  <!-- ============ PANEL ============ -->
+  <div class="panel" id="vPanel" hidden>
+    <header class="top">
+      <a class="top__brand" href="index.html"><b>SER+</b><span>Administración</span></a>
+      <div class="top__user">
+        <span id="quien"></span>
+        <button class="b b--ghost" type="button" id="bAuditoria">Actividad</button>
+        <button class="b b--ghost" type="button" id="bClave">Contraseña</button>
+        <button class="b b--white" type="button" id="bSalir">Salir</button>
+      </div>
+    </header>
+
+    <main class="work">
+      <div class="work__head">
+        <div class="tabs" role="tablist">
+          <button role="tab" type="button" data-tipo="matricula" aria-selected="true">Matrículas <span id="nMatricula">0</span></button>
+          <button role="tab" type="button" data-tipo="clase_gratis" aria-selected="false">Clases gratis <span id="nClase">0</span></button>
+        </div>
+        <div class="tools">
+          <input id="buscar" type="search" placeholder="Buscar por nombre, celular o referencia" aria-label="Buscar">
+          <select id="filtroEstado" aria-label="Filtrar por estado"></select>
+          <button class="b b--line" type="button" id="bExportar">Exportar CSV</button>
+          <button class="b b--red" type="button" id="bNuevo">+ Nuevo</button>
+        </div>
+      </div>
+
+      <p class="note note--debe" id="avisoDeben" hidden></p>
+      <p class="note" id="avisoViejas" hidden></p>
+      <p class="note note--err" id="avisoError" role="alert" hidden></p>
+
+      <div class="tablewrap">
+        <table class="tabla" id="tabla">
+          <thead><tr id="tablaHead"></tr></thead>
+          <tbody id="tablaBody"></tbody>
+        </table>
+        <p class="vacio" id="vacio" hidden>No hay registros que mostrar.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- ============ FICHA ============ -->
+  <dialog class="dlg dlg--wide" id="dFicha" aria-labelledby="fichaTitulo">
+    <form id="fFicha" novalidate>
+      <div class="dlg__bar">
+        <b id="fichaTitulo">Registro</b>
+        <button type="button" class="dlg__x" data-cerrar aria-label="Cerrar">×</button>
+      </div>
+      <div class="dlg__body" id="fichaCuerpo"></div>
+      <p class="dlg__err" id="fichaError" role="alert" hidden></p>
+      <div class="dlg__foot">
+        <button type="button" class="b b--danger" id="bEliminar">Eliminar</button>
+        <button type="button" class="b b--line" id="bDescargar">Descargar datos</button>
+        <span class="dlg__sp"></span>
+        <button type="button" class="b b--line" data-cerrar>Cerrar</button>
+        <button type="submit" class="b b--red" id="bGuardar">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ============ ELIMINAR ============ -->
+  <dialog class="dlg" id="dEliminar" aria-labelledby="elimTitulo">
+    <form id="fEliminar" novalidate>
+      <div class="dlg__bar"><b id="elimTitulo">Eliminar registro</b></div>
+      <div class="dlg__body">
+        <p>Vas a borrar definitivamente los datos de <b id="elimNombre"></b>. No se puede deshacer.</p>
+        <label>Escribe ELIMINAR para confirmar
+          <input name="confirmar" type="text" autocomplete="off" required>
+        </label>
+      </div>
+      <div class="dlg__foot">
+        <span class="dlg__sp"></span>
+        <button type="button" class="b b--line" data-cerrar>Cancelar</button>
+        <button type="submit" class="b b--danger">Eliminar definitivamente</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ============ CONTRASEÑA ============ -->
+  <dialog class="dlg" id="dClave" aria-labelledby="claveTitulo">
+    <form id="fClave" novalidate>
+      <div class="dlg__bar"><b id="claveTitulo">Cambiar contraseña</b></div>
+      <div class="dlg__body">
+        <label>Contraseña actual
+          <input name="actual" type="password" autocomplete="current-password" required maxlength="128">
+        </label>
+        <label>Nueva contraseña <small>(mínimo 12 caracteres)</small>
+          <input name="nueva" type="password" autocomplete="new-password" required minlength="12" maxlength="128">
+        </label>
+        <label>Repite la nueva contraseña
+          <input name="nueva2" type="password" autocomplete="new-password" required minlength="12" maxlength="128">
+        </label>
+        <p class="dlg__err" role="alert" hidden></p>
+      </div>
+      <div class="dlg__foot">
+        <span class="dlg__sp"></span>
+        <button type="button" class="b b--line" data-cerrar>Cancelar</button>
+        <button type="submit" class="b b--red">Cambiar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ============ ACTIVIDAD ============ -->
+  <dialog class="dlg dlg--wide" id="dAuditoria" aria-labelledby="audTitulo">
+    <div class="dlg__bar">
+      <b id="audTitulo">Actividad del panel</b>
+      <button type="button" class="dlg__x" data-cerrar aria-label="Cerrar">×</button>
+    </div>
+    <div class="dlg__body">
+      <p class="dlg__lead">Últimos 200 movimientos: entradas, consultas, cambios, exportaciones y eliminaciones.</p>
+      <table class="tabla tabla--s"><thead><tr><th>Fecha</th><th>Acción</th><th>Registro</th><th>Detalle</th></tr></thead><tbody id="audBody"></tbody></table>
+    </div>
+  </dialog>
+
+  <script src="admin.js" defer></script>
+</body>
+</html>

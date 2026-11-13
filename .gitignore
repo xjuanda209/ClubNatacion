@@ -52,3 +52,8 @@ Thumbs.db
 Desktop.ini
 .idea/
 .vscode/
+
+# Secretos generados y documentos originales del cliente
+/secretos-produccion.txt
+secretos*.txt
+/*.docx

@@ -8,6 +8,7 @@
 import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync, existsSync, statSync, lstatSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCE = join(ROOT, 'public');
@@ -36,6 +37,7 @@ const code = rootFiles.filter(f => /\.(css|js)$/.test(f));
 
 // 1. páginas, estilos y scripts
 const refs = new Set();
+const inlineHashes = new Set(); // scripts en línea permitidos por la política de seguridad (CSP)
 const missing = [];
 for (const f of [...pages, ...code]) {
   let text = readFileSync(join(SOURCE, f), 'utf8');
@@ -43,6 +45,14 @@ for (const f of [...pages, ...code]) {
   if (f.endsWith('.html') && SITE_URL) {
     // WhatsApp/Facebook necesitan la imagen de vista previa con URL absoluta
     text = text.replace(/(property="og:image" content=")(assets\/)/g, `$1${SITE_URL}/$2`);
+  }
+  if (f.endsWith('.html')) {
+    for (const m of text.matchAll(/<script(?![^>]*\ssrc=)[^>]*>([\s\S]*?)<\/script>/g)) {
+      inlineHashes.add(`'sha256-${createHash('sha256').update(m[1], 'utf8').digest('base64')}'`);
+    }
+    if (/\son[a-z]+\s*=\s*["']/i.test(text.replace(/<script[\s\S]*?<\/script>/g, ''))) {
+      throw new Error(`${f}: los atributos on...="" no funcionan con la política de seguridad; usa addEventListener.`);
+    }
   }
   writeFileSync(join(DIST, f), text);
 }
@@ -61,6 +71,8 @@ for (const ref of [...refs].sort()) {
 // 3. cabeceras de Workers Static Assets
 let headers = readFileSync(join(SOURCE, '_headers'), 'utf8');
 if (PROD) headers = headers.replace(/^\s*X-Robots-Tag:.*\n/m, '');
+if (!headers.includes('__CSP_SCRIPTS__')) throw new Error('public/_headers perdió el marcador __CSP_SCRIPTS__ de la política de seguridad.');
+headers = headers.replaceAll('__CSP_SCRIPTS__', [...inlineHashes].sort().join(' '));
 writeFileSync(join(DIST, '_headers'), headers);
 
 console.log(`dist/ listo · ${pages.length} páginas · ${code.length} css/js · ${refs.size - missing.length} imágenes (${(bytes / 1048576).toFixed(1)} MB)`);

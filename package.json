@@ -6,7 +6,7 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "npm run db:migrate:local && wrangler dev",
+    "dev": "npm run secretos:local && npm run db:migrate:local && wrangler dev",
     "build": "node --env-file-if-exists=.env scripts/build.mjs",
     "build:produccion": "npm run build -- --produccion",
     "preview": "npm run dev",
@@ -17,7 +17,12 @@
     "db:migrate:local": "wrangler d1 migrations apply sermasclubnatacion-db --local",
     "db:migrate:remote": "wrangler d1 migrations apply sermasclubnatacion-db --remote",
     "db:migrations": "wrangler d1 migrations list sermasclubnatacion-db --remote",
-    "deploy": "npm run db:migrate:remote && wrangler deploy"
+    "deploy": "npm run db:migrate:remote && wrangler deploy",
+    "legal": "node scripts/legal.mjs",
+    "secretos:local": "node scripts/secretos.mjs",
+    "secretos:produccion": "node scripts/secretos.mjs --produccion",
+    "admin:reiniciar": "wrangler d1 execute sermasclubnatacion-db --remote --command \"DELETE FROM sesiones; DELETE FROM admins;\"",
+    "admin:reiniciar:local": "wrangler d1 execute sermasclubnatacion-db --local --command \"DELETE FROM sesiones; DELETE FROM admins;\""
   },
   "devDependencies": {
     "@types/node": "24.19.2",

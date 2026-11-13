@@ -1,11 +1,24 @@
-# Cabeceras del sitio (las leen Cloudflare Pages y Netlify).
+# Cabeceras del sitio (Workers Static Assets). Las respuestas de /api llevan las suyas (src/worker.mjs).
 # X-Robots-Tag: mientras sea vista previa para el cliente, Google no la indexa
 # (hay textos y direcciones por confirmar). "npm run build:produccion" quita esa línea.
+# El marcador de script-src lo reemplaza scripts/build.mjs por las huellas de los scripts en línea.
 /*
   X-Robots-Tag: noindex
   X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' __CSP_SCRIPTS__ https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src https://maps.google.com https://www.google.com https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+
+# El panel y el formulario nunca se guardan en caché ni se indexan
+/admin*
+  Cache-Control: no-store
+  X-Robots-Tag: noindex, nofollow
+
+/inscripcion*
+  Cache-Control: no-cache
 
 # las fotos casi no cambian: el navegador las guarda una semana
 /assets/*

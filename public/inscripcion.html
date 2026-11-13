@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscripciones · Clase gratis y matrícula · Team SER+</title>
+  <meta name="description" content="Pide tu clase gratis de bienvenida o haz la matrícula 2026 del Club SER MÁS Natación en línea, con tus datos protegidos.">
+  <meta name="theme-color" content="#071a45">
+  <link rel="icon" type="image/png" href="assets/plus.png">
+
+  <meta property="og:title" content="Inscripciones · Clase gratis y matrícula · Team SER+">
+  <meta property="og:description" content="Pide tu clase gratis de bienvenida o haz la matrícula 2026 del Club SER MÁS Natación en línea, con tus datos protegidos.">
+  <meta property="og:image" content="assets/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Azeret+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="inscripcion.css">
+  <script>
+    document.documentElement.classList.add("js");
+    // red de seguridad: si los scripts fallan, el contenido de la portada aparece igual
+    setTimeout(function () { document.documentElement.classList.add("is-loaded"); }, 3000);
+  </script>
+</head>
+<body class="page-ins">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.06c-.24.68-1.42 1.3-1.96 1.35-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.58.75 1.85.88.27.14.45.2.52.32.07.11.07.66-.17 1.34Z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2Zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2Zm6.1-8.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0ZM21.4 8.1c-.1-1.5-.4-2.9-1.5-4s-2.5-1.4-4-1.5C14.3 2.5 9.7 2.5 8.1 2.6c-1.5.1-2.9.4-4 1.5S2.7 6.6 2.6 8.1c-.1 1.6-.1 6.2 0 7.8.1 1.5.4 2.9 1.5 4s2.5 1.4 4 1.5c1.6.1 6.2.1 7.8 0 1.5-.1 2.9-.4 4-1.5s1.4-2.5 1.5-4c.1-1.6.1-6.2 0-7.8Zm-2.1 9.6a3.2 3.2 0 0 1-1.8 1.8c-1.2.5-4.2.4-5.5.4s-4.3.1-5.5-.4a3.2 3.2 0 0 1-1.8-1.8c-.5-1.2-.4-4.2-.4-5.5s-.1-4.3.4-5.5a3.2 3.2 0 0 1 1.8-1.8c1.2-.5 4.2-.4 5.5-.4s4.3-.1 5.5.4a3.2 3.2 0 0 1 1.8 1.8c.5 1.2.4 4.2.4 5.5s.1 4.3-.4 5.5Z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5a7 7 0 0 0-7 7c0 5.2 7 12 7 12s7-6.8 7-12a7 7 0 0 0-7-7Zm0 9.6a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2Z"/></symbol>
+  </svg>
+
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="index.html" aria-label="Team SER+ Club Deportivo — inicio">
+        <img src="assets/logo-white.webp" alt="Team SER+ Club Deportivo" width="967" height="528">
+      </a>
+
+      <nav class="nav__links" aria-label="Principal">
+        <a href="club.html">El club</a>
+        <div class="nav__group">
+          <a class="nav__drop-link" href="index.html#categorias">Categorías</a>
+          <div class="nav__drop">
+            <a href="formacion.html"><span class="nav__drop-num nav__drop-num--pair">1·2</span><span class="nav__drop-txt"><b>Categorías 1 y 2</b><small>8 a 14 años · Formación</small></span></a>
+            <a href="competitivo.html"><span class="nav__drop-num nav__drop-num--pair">3·4</span><span class="nav__drop-txt"><b>Categorías 3 y 4</b><small>15 años en adelante</small></span></a>
+            <a href="master-triatlon.html"><span class="nav__drop-num">+</span><span class="nav__drop-txt"><b>Máster y triatlón</b><small>Adultos</small></span></a>
+          </div>
+        </div>
+        <a href="competencia.html">Competición</a>
+        <a href="index.html#galeria">Galería</a>
+        <a href="#sedes">Sedes</a>
+        <a href="index.html#inscripciones">Contacto</a>
+      </nav>
+
+      <div class="nav__meter" aria-hidden="true">
+        <span class="nav__meter-num" id="meterNum">00.0</span><span class="nav__meter-unit">m / 25 m</span>
+      </div>
+
+      <a class="nav__login" href="admin.html" aria-label="Iniciar sesión (administración)"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 12.2a4.6 4.6 0 1 0 0-9.2 4.6 4.6 0 0 0 0 9.2Zm0 2.1c-4.4 0-8 2.3-8 5.2V21h16v-1.5c0-2.9-3.6-5.2-8-5.2Z"/></svg><span>Ingresar</span></a>
+      <a class="btn btn--red nav__cta" href="inscripcion.html">Inscríbete</a>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__rope" aria-hidden="true"><div class="nav__rope-fill" id="ropeFill"></div></div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav aria-label="Menú móvil">
+      <a href="club.html"><span>01</span>El club</a>
+      <a href="index.html#categorias"><span>02</span>Categorías</a>
+      <div class="mobile-menu__cats">
+        <a href="formacion.html"><b>1·2</b>8–14</a>
+        <a href="competitivo.html"><b>3·4</b>15+</a>
+        <a href="master-triatlon.html"><b>+</b>Máster</a>
+      </div>
+      <a href="competencia.html"><span>03</span>Competición</a>
+      <a href="index.html#galeria"><span>04</span>Galería</a>
+      <a href="#sedes"><span>05</span>Sedes</a>
+      <a href="index.html#inscripciones"><span>06</span>Contacto</a>
+    </nav>
+    <a class="btn btn--red btn--lg" href="inscripcion.html">Inscríbete ahora</a>
+    <a class="mobile-menu__login" href="admin.html">Iniciar sesión</a>
+  </div>
+
+  <main id="contenido" class="ins">
+
+    <section class="ins-hero" aria-labelledby="ins-title">
+      <div class="wrap">
+        <p class="ins-hero__kicker mono">Inscripciones · temporada 2026</p>
+        <h1 class="h2 h2--light ins-hero__title" id="ins-title"><span class="h2__setup">Tu carril</span> <span class="accent">empieza aquí.</span></h1>
+
+        <div class="ins-modes" role="tablist" aria-label="Tipo de inscripción">
+          <button class="ins-mode" role="tab" type="button" id="tab-clase" aria-controls="panel-clase" aria-selected="true" data-modo="clase-gratis">
+            <span class="ins-mode__n mono">Sin costo</span>
+            <b>Clase gratis</b>
+            <small>De bienvenida · 1 minuto</small>
+          </button>
+          <button class="ins-mode" role="tab" type="button" id="tab-matricula" aria-controls="panel-matricula" aria-selected="false" data-modo="matricula">
+            <span class="ins-mode__n mono">2026</span>
+            <b>Matrícula</b>
+            <small>Deportista nuevo o renovación</small>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="ins-body">
+      <div class="wrap ins-body__in">
+
+        <p class="ins-alert" id="insAlert" role="alert" hidden></p>
+
+        <!-- ============ CLASE GRATIS ============ -->
+        <form class="form ins-form" id="panel-clase" role="tabpanel" aria-labelledby="tab-clase" novalidate data-tipo="clase_gratis">
+          <div class="form__head">
+            <h2>Clase gratis de bienvenida</h2>
+            <p>Déjanos tus datos y te escribimos para agendarla.</p>
+          </div>
+
+          <div class="ins-grid">
+            <div class="field">
+              <label for="cNombre">¿Quién va a nadar?</label>
+              <input id="cNombre" name="nombre" type="text" autocomplete="name" maxlength="80" required placeholder="Nombre y apellido">
+              <p class="field__err" aria-live="polite"></p>
+            </div>
+            <div class="field field--s">
+              <label for="cEdad">Edad</label>
+              <input id="cEdad" name="edad" type="number" inputmode="numeric" min="3" max="100" required placeholder="Años">
+              <p class="field__err" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="field" data-solo-menor hidden>
+            <label for="cAcudiente">Nombre del acudiente <span class="opt">(padre, madre o representante)</span></label>
+            <input id="cAcudiente" name="acudiente_nombre" type="text" autocomplete="name" maxlength="80" placeholder="Quien acompaña al menor">
+            <p class="field__err" aria-live="polite"></p>
+          </div>
+
+          <div class="ins-grid">
+            <div class="field">
+              <label for="cCelular">Celular <span class="opt">(WhatsApp)</span></label>
+              <input id="cCelular" name="celular" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required placeholder="300 000 0000">
+              <p class="field__err" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="cCorreo">Correo <span class="opt">(opcional)</span></label>
+              <input id="cCorreo" name="correo" type="email" autocomplete="email" maxlength="254" placeholder="nombre@correo.com">
+              <p class="field__err" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="ins-grid">
+            <div class="field">
+              <label for="cPrograma">¿Qué te interesa?</label>
+              <div class="select">
+                <select id="cPrograma" name="programa" required>
+                  <option value="" disabled selected>Elige una opción</option>
+                  <option value="cat1">Categoría 1 · 8 a 11 años</option>
+                  <option value="cat2">Categoría 2 · 12 a 14 años</option>
+                  <option value="cat3">Categoría 3 · 15 a 17 años</option>
+                  <option value="cat4">Categoría 4 · 17+ años</option>
+                  <option value="master">Natación máster · adultos</option>
+                  <option value="triatlon">Triatlón y aguas abiertas</option>
+                  <option value="asesoria">Asesoría deportiva en natación</option>
+                  <option value="orientacion">No estoy seguro: oriéntenme</option>
+                </select>
+              </div>
+              <p class="field__err" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="cSede">Sede</label>
+              <div class="select">
+                <select id="cSede" name="sede" required>
+                  <option value="" disabled selected>Elige una sede</option>
+                  <option value="medellin">Medellín · Estadio</option>
+                  <option value="envigado">Envigado · Corporación Milán</option>
+                  <option value="cualquiera">Cualquiera de las dos</option>
+                </select>
+              </div>
+              <p class="field__err" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="cMensaje">Mensaje <span class="opt">(opcional)</span></label>
+            <textarea id="cMensaje" name="mensaje" rows="2" maxlength="500" placeholder="Tu nivel, tu meta o el horario que prefieres"></textarea>
+            <p class="field__err" aria-live="polite"></p>
+          </div>
+
+          <div class="checks">
+            <div class="field check">
+              <label><input type="checkbox" name="autoriza_datos" required>
+                <span>Autorizo al Club SER MÁS Natación a usar estos datos <b>solo para contactarme y agendar la clase</b>, según su <a href="privacidad.html" target="_blank" rel="noopener" data-doc="politica">Política de tratamiento de datos</a>.</span></label>
+              <p class="field__err" aria-live="polite"></p>
+            </div>
+            <div class="field check" data-solo-menor hidden>
+              <label><input type="checkbox" name="declara_representante">
+                <span>Soy el padre, la madre o el representante legal del menor.</span></label>
+              <p class="field__err" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label>No llenes este campo <input type="text" name="sitio_web" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <div class="ins-turnstile" data-turnstile></div>
+
+          <button class="btn btn--red btn--lg btn--block" type="submit">Pedir mi clase gratis <span aria-hidden="true">→</span></button>
+          <p class="form__note">Conexión cifrada. Tus datos solo los ve el club.</p>
+        </form>
+
+        <!-- ============ MATRÍCULA ============ -->
+        <form class="form ins-form" id="panel-matricula" role="tabpanel" aria-labelledby="tab-matricula" novalidate hidden data-tipo="matricula">
+          <div class="form__head">
+            <h2>Matrícula 2026</h2>
+            <p>Si el deportista es menor de edad, la diligencia su padre, madre o representante legal.</p>
+          </div>
+
+          <!-- carril de avance: 25 m en cuatro tramos -->
+          <div class="lane-steps" aria-hidden="true">
+            <div class="lane-steps__rope"><div class="lane-steps__fill" id="stepFill"></div></div>
+            <ol class="lane-steps__list">
+              <li class="is-on" data-paso-ind="1"><span class="mono">0 m</span>Deportista</li>
+              <li data-paso-ind="2"><span class="mono">8 m</span>Salud</li>
+              <li data-paso-ind="3"><span class="mono">16 m</span>Acudiente</li>
+              <li data-paso-ind="4"><span class="mono">25 m</span>Firma</li>
+            </ol>
+          </div>
+          <p class="sr-only" id="stepLive" aria-live="polite"></p>
+
+          <!-- PASO 1 -->
+          <fieldset class="paso" data-paso="1">
+            <legend class="paso__t">Datos del deportista</legend>
+            <div class="ins-grid">
+              <div class="field">
+                <label for="mNombres">Nombres</label>
+                <input id="mNombres" name="nombres" type="text" autocomplete="given-name" maxlength="80" required>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="mApellidos">Apellidos</label>
+                <input id="mApellidos" name="apellidos" type="text" autocomplete="family-name" maxlength="80" required>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="ins-grid ins-grid--3">
+              <div class="field">
+                <label for="mTipoDoc">Tipo de documento</label>
+                <div class="select">
+                  <select id="mTipoDoc" name="tipo_documento" required>
+                    <option value="" disabled selected>Elige</option>
+                    <option value="RC">Registro civil</option>
+                    <option value="TI">Tarjeta de identidad</option>
+                    <option value="CC">Cédula de ciudadanía</option>
+                    <option value="CE">Cédula de extranjería</option>
+                    <option value="PA">Pasaporte</option>
+                    <option value="PPT">Permiso por protección temporal</option>
+                  </select>
+                </div>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="mNumDoc">Número de documento</label>
+                <input id="mNumDoc" name="numero_documento" type="text" inputmode="numeric" autocomplete="off" maxlength="20" required>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="mNacimiento">Fecha de nacimiento</label>
+                <input id="mNacimiento" name="fecha_nacimiento" type="date" autocomplete="bday" required>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+            </div>
+            <p class="ins-minor" id="minorNote" hidden><b>Menor de edad.</b> En el paso 3 te pediremos los datos del acudiente.</p>
+            <div class="ins-grid">
+              <div class="field">
+                <label for="mCelular">Celular de contacto</label>
+                <input id="mCelular" name="celular" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required placeholder="300 000 0000">
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="mCorreo">Correo</label>
+                <input id="mCorreo" name="correo" type="email" autocomplete="email" maxlength="254" required placeholder="nombre@correo.com">
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="ins-grid">
+              <div class="field">
+                <label for="mDireccion">Dirección de residencia</label>
+                <input id="mDireccion" name="direccion" type="text" autocomplete="street-address" maxlength="120" required>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="mCiudad">Ciudad o municipio</label>
+                <input id="mCiudad" name="ciudad" type="text" autocomplete="address-level2" maxlength="60" required>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="ins-grid">
+              <div class="field">
+                <label for="mPrograma">Categoría o programa</label>
+                <div class="select">
+                  <select id="mPrograma" name="programa" required>
+                    <option value="" disabled selected>Elige una opción</option>
+                    <option value="cat1">Categoría 1 · 8 a 11 años</option>
+                    <option value="cat2">Categoría 2 · 12 a 14 años</option>
+                    <option value="cat3">Categoría 3 · 15 a 17 años</option>
+                    <option value="cat4">Categoría 4 · 17+ años</option>
+                    <option value="master">Natación máster · adultos</option>
+                    <option value="triatlon">Triatlón y aguas abiertas</option>
+                    <option value="asesoria">Asesoría deportiva en natación</option>
+                    <option value="orientacion">Que el club me ubique</option>
+                  </select>
+                </div>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="mSede">Sede</label>
+                <div class="select">
+                  <select id="mSede" name="sede" required>
+                    <option value="" disabled selected>Elige una sede</option>
+                    <option value="medellin">Medellín · Estadio</option>
+                    <option value="envigado">Envigado · Corporación Milán</option>
+                    <option value="cualquiera">Cualquiera de las dos</option>
+                  </select>
+                </div>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- PASO 2 -->
+          <fieldset class="paso" data-paso="2" hidden>
+            <legend class="paso__t">Seguridad social y salud</legend>
+            <div class="ins-grid">
+              <div class="field">
+                <label for="mEps">EPS actual</label>
+                <input id="mEps" name="eps" type="text" maxlength="80" required placeholder="Nombre de la EPS">
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="mRegimen">Régimen <span class="opt">(opcional)</span></label>
+                <div class="select">
+                  <select id="mRegimen" name="regimen">
+                    <option value="" selected>Sin especificar</option>
+                    <option value="contributivo">Contributivo</option>
+                    <option value="subsidiado">Subsidiado</option>
+                    <option value="especial">Especial o de excepción</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="mSalud">¿Algo de salud que el entrenador deba saber? <span class="opt">(opcional)</span></label>
+              <textarea id="mSalud" name="condiciones_salud" rows="3" maxlength="600" placeholder="Alergias, asma, lesiones, medicamentos…"></textarea>
+              <p class="field__err" aria-live="polite"></p>
+            </div>
+            <p class="paso__sub">En caso de emergencia llamamos a</p>
+            <div class="ins-grid">
+              <div class="field">
+                <label for="mEmNombre">Nombre</label>
+                <input id="mEmNombre" name="emergencia_nombre" type="text" maxlength="80" required>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="mEmTel">Celular</label>
+                <input id="mEmTel" name="emergencia_telefono" type="tel" inputmode="tel" maxlength="20" required placeholder="300 000 0000">
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="mClub">¿Viene de otro club? <span class="opt">(opcional · necesitarás paz y salvo)</span></label>
+              <input id="mClub" name="club_anterior" type="text" maxlength="80" placeholder="Nombre del club anterior">
+              <p class="field__err" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <!-- PASO 3 -->
+          <fieldset class="paso" data-paso="3" hidden>
+            <legend class="paso__t">Acudiente</legend>
+            <p class="paso__lead">Padre, madre o representante legal del menor. Es quien firma la matrícula.</p>
+            <div class="ins-grid">
+              <div class="field">
+                <label for="aNombre">Nombre completo</label>
+                <input id="aNombre" name="acudiente_nombre" type="text" autocomplete="name" maxlength="80" required>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="aParentesco">Parentesco</label>
+                <input id="aParentesco" name="acudiente_parentesco" type="text" maxlength="40" required placeholder="Madre, padre, tutor…">
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="ins-grid">
+              <div class="field">
+                <label for="aTipoDoc">Tipo de documento</label>
+                <div class="select">
+                  <select id="aTipoDoc" name="acudiente_tipo_documento" required>
+                    <option value="" disabled selected>Elige</option>
+                    <option value="CC">Cédula de ciudadanía</option>
+                    <option value="CE">Cédula de extranjería</option>
+                    <option value="PA">Pasaporte</option>
+                    <option value="PPT">Permiso por protección temporal</option>
+                  </select>
+                </div>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="aNumDoc">Número de documento</label>
+                <input id="aNumDoc" name="acudiente_numero_documento" type="text" inputmode="numeric" autocomplete="off" maxlength="20" required>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="ins-grid">
+              <div class="field">
+                <label for="aCelular">Celular</label>
+                <input id="aCelular" name="acudiente_celular" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required placeholder="300 000 0000">
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="aCorreo">Correo</label>
+                <input id="aCorreo" name="acudiente_correo" type="email" autocomplete="email" maxlength="254" required placeholder="nombre@correo.com">
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- PASO 4 -->
+          <fieldset class="paso" data-paso="4" hidden>
+            <legend class="paso__t">Leer, aceptar y firmar</legend>
+
+            <div class="checks">
+              <div class="field check check--doc">
+                <label><input type="checkbox" name="acepta_reglamento" required data-requiere-doc="reglamento">
+                  <span>Leí y acepto el <b>Reglamento del club 2026</b>.</span></label>
+                <button class="check__read" type="button" data-doc="reglamento">Leer el reglamento</button>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field check check--doc">
+                <label><input type="checkbox" name="acepta_instructivo" required data-requiere-doc="instructivo">
+                  <span>Leí y acepto el <b>Instructivo de matrícula 2026</b> y enviaré los documentos que pide.</span></label>
+                <button class="check__read" type="button" data-doc="instructivo">Leer el instructivo</button>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field check">
+                <label><input type="checkbox" name="autoriza_datos" required>
+                  <span>Autorizo de manera previa, expresa e informada al Club SER MÁS Natación para tratar los datos de este formulario según su <a href="privacidad.html" target="_blank" rel="noopener" data-doc="politica">Política de tratamiento de datos</a>, con el fin de gestionar la matrícula, el proceso deportivo, la póliza de accidentes, las competencias y la comunicación con la familia.</span></label>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field check">
+                <label><input type="checkbox" name="autoriza_datos_sensibles" required>
+                  <span>Autorizo expresamente el tratamiento de <b>datos sensibles de salud</b> (EPS y condiciones médicas) para atender emergencias y cuidar al deportista. Sé que la ley no me obliga a autorizarlo.</span></label>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field check" data-solo-menor hidden>
+                <label><input type="checkbox" name="declara_representante">
+                  <span>Soy el padre, la madre o el representante legal del menor y puedo autorizar el tratamiento de sus datos.</span></label>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field check" data-solo-menor hidden>
+                <label><input type="checkbox" name="menor_escuchado">
+                  <span>El menor conoce el reglamento, fue escuchado y está de acuerdo con su matrícula.</span></label>
+                <p class="field__err" aria-live="polite"></p>
+              </div>
+              <div class="field check check--opt">
+                <label><input type="checkbox" name="autoriza_imagen">
+                  <span><span class="opt">Opcional.</span> Autorizo el uso de fotos y videos del deportista en las redes y el sitio del club. Puedo retirar este permiso cuando quiera.</span></label>
+              </div>
+            </div>
+
+            <div class="field firma">
+              <label for="mFirma">Firma: escribe tu nombre completo</label>
+              <input id="mFirma" name="firma_nombre" type="text" autocomplete="name" maxlength="80" required placeholder="Deportista mayor de edad o acudiente">
+              <p class="field__err" aria-live="polite"></p>
+              <p class="firma__note">Tu nombre, la fecha y la versión de los documentos quedan guardados como prueba de aceptación (mensaje de datos, Ley 527 de 1999).</p>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label>No llenes este campo <input type="text" name="sitio_web" tabindex="-1" autocomplete="off"></label>
+            </div>
+            <div class="ins-turnstile" data-turnstile></div>
+          </fieldset>
+
+          <div class="paso-nav">
+            <button class="btn btn--line" type="button" id="stepBack" hidden>← Atrás</button>
+            <button class="btn btn--navy btn--lg" type="button" id="stepNext">Siguiente <span aria-hidden="true">→</span></button>
+            <button class="btn btn--red btn--lg" type="submit" id="stepSend" hidden>Enviar matrícula <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="form__note">Conexión cifrada. Los datos se guardan cifrados y solo los ve el club.</p>
+        </form>
+
+        <!-- ============ LISTO ============ -->
+        <div class="form ins-done" id="insDone" tabindex="-1" hidden>
+          <p class="ins-done__ref mono">Referencia <b id="doneRef">SM-000000</b></p>
+          <h2 class="ins-done__t" id="doneTitle">¡Tocaste la pared!</h2>
+          <p class="ins-done__p" id="doneText"></p>
+          <div class="ins-done__docs" id="doneDocs" hidden>
+            <p class="paso__sub">Para terminar, envía en PDF</p>
+            <ul>
+              <li>Hoja de vida del deportista</li>
+              <li>Documento de identidad</li>
+              <li>Certificado de la EPS</li>
+              <li>Documento del acudiente (menores)</li>
+              <li>Certificado médico 2026</li>
+              <li>Foto con fondo blanco</li>
+              <li>Soportes de pago</li>
+              <li>Paz y salvo, si vienes de otro club</li>
+            </ul>
+            <p class="ins-done__mail">A <a href="mailto:sermasnatacion@gmail.com">sermasnatacion@gmail.com</a> o por WhatsApp, marcados con el nombre del deportista.</p>
+          </div>
+          <div class="ins-done__actions">
+            <a class="btn btn--navy btn--lg" href="https://wa.me/573234380362" data-wa-link data-wa-text="¡Hola Team SER+! Acabo de enviar mi inscripción en la página."><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><use href="#i-wa"/></svg> Escribir por WhatsApp</a>
+            <a class="btn btn--line btn--lg" href="index.html">Volver al inicio</a>
+          </div>
+        </div>
+
+        <aside class="ins-side">
+          <div class="ins-side__box">
+            <p class="mono">Tus datos, protegidos</p>
+            <ul>
+              <li>Viajan y se guardan cifrados.</li>
+              <li>Solo los ve la administración del club.</li>
+              <li>Puedes pedir verlos, corregirlos o borrarlos.</li>
+            </ul>
+            <a href="privacidad.html">Política de tratamiento de datos</a>
+          </div>
+          <div class="ins-side__box ins-side__box--line">
+            <p class="mono">¿Prefieres ayuda?</p>
+            <p>La secretaría del club te acompaña en el proceso.</p>
+            <a href="https://wa.me/573234380362" data-wa-link data-wa-text="¡Hola Team SER+! Necesito ayuda con la inscripción.">Escribir por WhatsApp</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <dialog class="docdlg" id="docDialog" aria-labelledby="docDialogTitle">
+      <div class="docdlg__bar">
+        <b id="docDialogTitle">Documento</b>
+        <button type="button" class="docdlg__x" data-doc-cerrar aria-label="Cerrar">×</button>
+      </div>
+      <div class="docdlg__body legal" id="docDialogBody" tabindex="0"></div>
+      <div class="docdlg__foot">
+        <button type="button" class="btn btn--line" data-doc-cerrar>Cerrar</button>
+        <button type="button" class="btn btn--red" id="docAccept">Leí y acepto</button>
+      </div>
+    </dialog>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="rope rope--footer" data-rope aria-hidden="true"></div>
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <img src="assets/logo-white.webp" alt="Team SER+ Club Deportivo" width="967" height="528" loading="lazy">
+      </div>
+      <nav class="footer__nav" aria-label="Pie de página">
+        <a href="club.html">El club</a>
+        <a href="index.html#categorias">Categorías</a>
+        <a href="competencia.html">Competición</a>
+        <a href="index.html#galeria">Galería</a>
+        <a href="#sedes">Sedes</a>
+        <a href="inscripcion.html">Inscripciones</a>
+        <a href="documentos.html">Reglamento</a>
+        <a href="privacidad.html">Datos personales</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://wa.me/plusnatacio" data-wa-link target="_blank" rel="noopener" aria-label="WhatsApp de Team SER+: @plusnatacio">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-wa"/></svg>
+        </a>
+        <a class="footer__ig" href="https://www.instagram.com/sermasnatacion/" target="_blank" rel="noopener" aria-label="Instagram de Team SER+: @sermasnatacion">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-ig"/></svg>
+        </a>
+        <p class="footer__handles">
+          <a href="https://wa.me/plusnatacio" data-wa-link target="_blank" rel="noopener">WhatsApp · @plusnatacio</a>
+          <a href="https://www.instagram.com/sermasnatacion/" target="_blank" rel="noopener">Instagram · @sermasnatacion</a>
+        </p>
+      </div>
+    </div>
+    <div class="wrap footer__sedes">
+      <p><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg><b>Medellín</b> Complejo Acuático · Estadio Atanasio Girardot</p>
+      <p><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg><b>Envigado</b> Corporación Milán</p>
+    </div>
+    <div class="wrap footer__base">
+      <p>Respeto <b>+</b> Pasión <b>+</b> Disciplina <b>+</b> Humildad <b>+</b> Trabajo en equipo <b>+</b> Alegría</p>
+      <p>© <span id="year">2026</span> Team SER+ Club Deportivo · SER MÁS Natación</p>
+    </div>
+    <div class="footer__giant" aria-hidden="true">SER+</div>
+  </footer>
+
+  <div class="wa-float">
+    <a class="wa-float__btn wa-float__btn--ig" href="https://ig.me/m/sermasnatacion" data-ig-link aria-label="Escríbenos por Instagram: @sermasnatacion">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-ig"/></svg>
+      <span>Instagram</span>
+    </a>
+    <a class="wa-float__btn wa-float__btn--wa" href="https://wa.me/plusnatacio" data-wa-link aria-label="Escríbenos por WhatsApp: @plusnatacio">
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><use href="#i-wa"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+
+  <script src="cookies.js" defer></script>
+  <script src="water.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="inscripcion.js" defer></script>
+</body>
+</html>

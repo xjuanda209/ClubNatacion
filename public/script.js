@@ -10,7 +10,7 @@
 const CONFIG = {
   instagram: 'sermasnatacion',
   whatsappUser: 'plusnatacio',
-  whatsapp: '',
+  whatsapp: '573234380362',
   saludo: '¡Hola Team SER+! Quiero información sobre las clases de natación.',
 };
 

@@ -1,15 +1,16 @@
 # SER MÁS Club Natación
 
-Frontend de seis páginas en HTML, CSS y JavaScript, con backend en Cloudflare
-Workers y base de datos D1 preparada para el CRUD de usuarios.
+Sitio en HTML, CSS y JavaScript con backend en Cloudflare Workers y D1:
+inscripción en línea (clase gratis y matrícula) y panel del administrador
+(`/admin`) con los datos cifrados. Guía completa en [docs/DATABASE.md](docs/DATABASE.md).
 Se publica en el Worker **sermasclubnatacion**:
 https://sermasclubnatacion.xjuancho16.workers.dev
 
 ## Estructura
 
 - `public/`: páginas, estilos, scripts, cabeceras y las 51 imágenes usadas por el sitio.
-- `src/worker.mjs`: backend y comprobación de D1 en `/api/health`.
-- `migrations/`: cambios SQL versionados; la primera migración crea `users`.
+- `src/`: backend (rutas, cifrado, validación y versiones de los textos legales).
+- `migrations/`: cambios SQL versionados.
 - `tests/`: pruebas del backend.
 - `scripts/build.mjs`: genera `dist/` con los archivos publicables y comprueba las imágenes.
 - `wrangler.jsonc`: configuración del Worker existente y del servidor local.
@@ -74,10 +75,10 @@ comando de compilación en Cloudflare y en `wrangler.jsonc` a `npm run build:pro
 
 ## Base de datos y siguiente etapa
 
-D1 **sermasclubnatacion-db** está conectada como `env.DB`. `users` contiene
-nombre, correo único, teléfono, estado activo y fechas. La comprobación está en
+D1 **sermasclubnatacion-db** está conectada como `env.DB`. La comprobación está en
 https://sermasclubnatacion.xjuancho16.workers.dev/api/health.
 
-La base queda preparada y vacía. Los formularios, operaciones del CRUD y su
-autenticación se implementarán en la siguiente etapa. Detalles y comandos en
-[docs/DATABASE.md](docs/DATABASE.md).
+Antes del primer despliegue de esta etapa hay que crear los secretos
+(`npm run secretos:produccion`) y después la cuenta del administrador en `/admin`.
+Sin `MASTER_KEY` la API responde 503 y no guarda nada. Pasos, medidas de seguridad
+y pendientes legales en [docs/DATABASE.md](docs/DATABASE.md).
