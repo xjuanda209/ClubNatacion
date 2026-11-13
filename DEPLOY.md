@@ -36,7 +36,7 @@ aplicaciones conectadas a Codex es independiente de esta integración de desplie
 | Rama de producción | `main` |
 | Directorio raíz | `/` (raíz del repositorio) |
 | Comando de compilación | `npm run build` |
-| Comando de despliegue | `npx wrangler deploy` |
+| Comando de despliegue | `npm run deploy` |
 | Versión de Node.js | `24` (archivo `.nvmrc`; si se solicita variable: `NODE_VERSION=24`) |
 | API token | Generado automáticamente por Cloudflare |
 | Despliegues de otras ramas / Previews | Desactivados para esta primera configuración |
@@ -46,18 +46,23 @@ compilación después de conectar, haz un nuevo commit y push a `main`.
 Confirma que la compilación termine correctamente y que el sitio conserve las seis páginas.
 
 El nombre en `wrangler.jsonc` coincide con el Worker existente. Se publica `dist/`
-mediante **Workers Static Assets**. Cloudflare instala las dependencias desde
+mediante **Workers Static Assets** y `src/worker.mjs` atiende el backend `/api/`.
+La base D1 `sermasclubnatacion-db` está vinculada como `DB`. Cloudflare instala las dependencias desde
 `package-lock.json`; el repositorio contiene los fuentes y no incluye `dist/`.
+
+`npm run deploy` aplica las migraciones de `migrations/` en D1 antes de publicar
+el Worker. Si una migración falla, el despliegue se detiene. El token de Workers
+Builds necesita permisos de edición de Workers y D1; se almacena en Cloudflare.
 
 ## Comandos locales
 
 ```powershell
 npm ci
-npm run dev       # http://127.0.0.1:8787, recompila los cambios de public/
+npm run dev       # migra D1 local y abre http://127.0.0.1:8787
 npm run build     # genera dist/
-npm run check     # validación de Wrangler sin publicar
+npm run check     # tipos, pruebas y validación de Wrangler sin publicar
 npx wrangler login
-npm run deploy    # compila y publica en el Worker existente
+npm run deploy    # migra D1 remota, compila y publica el Worker existente
 ```
 
 No se necesitan credenciales dentro del repositorio. La conexión de las aplicaciones
