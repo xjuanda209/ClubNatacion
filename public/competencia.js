@@ -215,9 +215,10 @@ if (podium) {
 }
 
 /* =========================================================
-   ENTRENAMIENTO — reloj de ritmo
-   Cada serie "@ m:ss" sale cada tantos segundos: en el reloj
-   el nadador lee en qué número le toca salir.
+   ENTRENAMIENTO — pizarra y reloj de ritmo
+   El reloj corre con la hora real. Cada línea de la pizarra
+   se encierra con el plumón y su nota sale junto al reloj.
+   (El plan de entrenamiento es reservado: aquí no hay series.)
    ========================================================= */
 const pcSvg = $('#pcSvg');
 if (pcSvg) {
@@ -250,59 +251,19 @@ if (pcSvg) {
 
   const secHand = $('#pcSec');
   const minHand = $('#pcMin');
-  const deps = $('#pcDeps');
-  const arcs = $('#pcArcs');
   const setLbl = $('#pcSet');
-  const departsEl = $('#pcDeparts');
-  const nextEl = $('#pcNext');
   const noteEl = $('#pcNote');
   const sets = $$('.set');
-  let cur = null;
 
-  const arcPath = (a0, a1, r) => {
-    const [x0, y0] = polar(a0, r);
-    const [x1, y1] = polar(a1, r);
-    const large = a1 - a0 > 180 ? 1 : 0;
-    return `M${x0.toFixed(2)} ${y0.toFixed(2)} A${r} ${r} 0 ${large} 1 ${x1.toFixed(2)} ${y1.toFixed(2)}`;
-  };
-  const arc = svgEl('path', { class: 'pc__arc', d: '' }, arcs);
-
-  // círculo a mano alzada alrededor de la serie elegida
+  // círculo a mano alzada alrededor de la línea elegida
   sets.forEach((b) => {
     b.insertAdjacentHTML('beforeend', '<svg class="set__ring" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M10 24C6 10 36 4 60 4c24 0 37 8 35 19-2 11-30 15-54 14C16 36 3 31 6 19c2-6 9-10 18-12"/></svg>');
   });
 
   const select = (btn) => {
     sets.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-    const reps = +btn.dataset.reps;
-    const int = +btn.dataset.int;
-    const label = btn.textContent.replace(/\s+/g, ' ').trim();
-    const nowS = Date.now() / 1000;
-    cur = { reps, int, anchor: Math.floor(nowS / 60) * 60 };
-    setLbl.textContent = label;
+    setLbl.textContent = btn.textContent.replace(/\s+/g, ' ').trim();
     noteEl.textContent = btn.dataset.note || '';
-    deps.replaceChildren();
-    if (!int) {
-      departsEl.textContent = 'Nado continuo: no hay salidas que marcar en el reloj.';
-      nextEl.textContent = '—';
-      arc.setAttribute('d', '');
-      cur = null;
-      return;
-    }
-    const seq = [];
-    const seen = new Map();
-    for (let k = 0; k < reps; k++) {
-      const s = (k * int) % 60;
-      seq.push(s);
-      if (!seen.has(s)) {
-        const [x, y] = polar(s * 6, 161);
-        const g = svgEl('g', { class: 'pc__dep' }, deps);
-        svgEl('circle', { cx: x, cy: y, r: 8.5 }, g);
-        seen.set(s, g);
-      }
-    }
-    cur.dots = seen;
-    departsEl.innerHTML = `Sales en el ${seq.map((s) => `<b>${s || 60}</b>`).join(' · ')}`;
   };
 
   const tickClock = () => {
@@ -310,27 +271,10 @@ if (pcSvg) {
     const sec = (ms / 1000) % 60;
     secHand.setAttribute('transform', `rotate(${(sec * 6).toFixed(2)})`);
     minHand.setAttribute('transform', `rotate(${(((ms / 60000) % 60) * 6).toFixed(2)})`);
-    if (!cur) return;
-    const nowS = ms / 1000;
-    const el = nowS - cur.anchor;
-    const k = Math.floor(el / cur.int);              // salidas ya hechas desde el ancla
-    const rep = k % cur.reps;                        // repetición en curso (0..reps-1)
-    const depAt = cur.anchor + k * cur.int;          // última salida
-    const next = depAt + cur.int;
-    const pos = (s) => Math.round((s - cur.anchor) % 60 + 60) % 60;
-    // arco: lo que falta para la próxima salida, desde la aguja
-    // (si falta más de un minuto, el reloj aún tiene que dar la vuelta: sin arco)
-    const left = next - nowS;
-    const a0 = sec * 6;
-    arc.setAttribute('d', left < 60 ? arcPath(a0, a0 + left * 6, 161) : '');
-    const nextPos = pos(next);
-    cur.dots.forEach((g, s) => g.classList.toggle('is-next', s === nextPos));
-    const wait = Math.ceil(left);
-    nextEl.textContent = `Rep. ${rep + 1}/${cur.reps} · en el ${nextPos || 60} · faltan ${wait >= 60 ? fmtTime(wait, 0) : `${pad2(wait)} s`}`;
   };
 
-  sets.forEach((b) => b.addEventListener('click', () => { select(b); tickClock(); }));
-  select(sets.find((b) => b.dataset.int === '100') || sets[0]);
+  sets.forEach((b) => b.addEventListener('click', () => select(b)));
+  if (sets.length) select(sets[2] || sets[0]);
   tickClock();
 
   // el reloj corre solo mientras se ve

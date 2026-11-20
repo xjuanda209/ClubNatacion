@@ -3,13 +3,12 @@
    Comportamiento del sitio. Necesita water.js cargado antes.
    ========================================================= */
 
-// Contacto del club: WhatsApp por usuario (wa.me/plusnatacio abre el chat sin
-// necesidad del número) e Instagram por mensaje directo.
-// EDITAR: si llega el número de WhatsApp (código de país + número, sin + ni
-// espacios, p. ej. '573001234567'), se pone en "whatsapp" y tiene prioridad.
+// Contacto del club: WhatsApp (+57 323 438 0362, número oficial dado por el
+// cliente) e Instagram por mensaje directo.
+// EDITAR: el número va con código de país, sin + ni espacios. Si cambia,
+// cambiar también el texto visible "+57 323 438 0362" en las páginas.
 const CONFIG = {
   instagram: 'sermasnatacion',
-  whatsappUser: 'plusnatacio',
   whatsapp: '573234380362',
   saludo: '¡Hola Team SER+! Quiero información sobre las clases de natación.',
 };
@@ -748,8 +747,7 @@ if (board) {
    data-wa-form arma un mensaje con los campos marcados con
    data-wa="Etiqueta" y lo abre listo en WhatsApp.
    --------------------------------------------------------- */
-const waId = /^\d{8,15}$/.test(CONFIG.whatsapp) ? CONFIG.whatsapp : CONFIG.whatsappUser;
-const waUrl = (text) => `https://wa.me/${waId}?text=${encodeURIComponent(text)}`;
+const waUrl = (text) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
 const igChat = `https://ig.me/m/${CONFIG.instagram}`;
 
 $$('[data-wa-link]').forEach((a) => {

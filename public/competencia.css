@@ -347,7 +347,8 @@ html:not(.js) .step__info, html:not(.js) .step__block { opacity: 1; transform: n
 .deck {
   --tile: 56px;
   position: relative;
-  padding: clamp(80px, 10vw, 140px) 0 clamp(80px, 10vw, 140px);
+  /* abajo: la franja azul (1,5 azulejos) más aire para que nada la pise */
+  padding: clamp(80px, 10vw, 140px) 0 calc(var(--tile) * 1.5 + clamp(36px, 5vw, 72px));
   background:
     radial-gradient(70% 60% at 30% 30%, rgba(255, 255, 255, .7), transparent 70%),
     linear-gradient(135deg, rgba(255, 255, 255, .85) 0 12%, rgba(255, 255, 255, 0) 38%) 0 0 / var(--tile) var(--tile),
@@ -366,7 +367,7 @@ html:not(.js) .step__info, html:not(.js) .step__block { opacity: 1; transform: n
     linear-gradient(180deg, #1358e6, #0b3fb0);
   box-shadow: 0 -2px 0 var(--red-600);
 }
-.deck__head, .deck__scene, .deck__key { position: relative; z-index: 1; }
+.deck__head, .deck__scene { position: relative; z-index: 1; }
 
 .deck__scene {
   display: grid;
@@ -526,10 +527,6 @@ html:not(.js) .step__info, html:not(.js) .step__block { opacity: 1; transform: n
 }
 .pc__brand { font-family: var(--f-sans); font-size: 13px; font-weight: 900; font-stretch: 125%; font-style: italic; fill: #0b2463; letter-spacing: .02em; }
 .pc__brand--sub { font-family: var(--f-mono); font-size: 7.5px; font-weight: 600; font-style: normal; letter-spacing: .24em; fill: #7d88a4; }
-.pc__dep circle { fill: #e3241b; stroke: #fff; stroke-width: 2.5; }
-.pc__dep text { font-family: var(--f-mono); font-size: 10px; font-weight: 600; fill: #fff; }
-.pc__dep.is-next circle { animation: depPulse 1s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
-.pc__arc { fill: none; stroke: rgba(227, 36, 27, .2); stroke-width: 14; stroke-linecap: round; }
 
 .pc__read {
   width: min(100%, 420px);
@@ -543,39 +540,16 @@ html:not(.js) .step__info, html:not(.js) .step__block { opacity: 1; transform: n
   text-transform: uppercase; letter-spacing: -.01em;
   color: var(--navy-900);
 }
-.pc__departs { margin-top: 6px; font-size: .95rem; color: var(--ink-soft); }
-.pc__departs b { color: var(--red-600); font-family: var(--f-mono); font-weight: 600; }
-.pc__next {
-  display: grid; gap: 2px;
-  margin-top: 12px; padding-top: 12px;
+.pc__label {
+  margin-bottom: 6px;
+  font-family: var(--f-mono); font-size: .62rem; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--ink-mute);
+}
+.pc__note {
+  margin-top: 10px; padding-top: 10px;
   border-top: 1px solid var(--line);
-  font-family: var(--f-mono); font-size: .95rem; font-weight: 600; color: var(--navy-900);
-  font-variant-numeric: tabular-nums;
+  font-size: .95rem; color: var(--ink-soft); line-height: 1.5;
 }
-.pc__label { font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-mute); }
-.pc__note { margin-top: 10px; font-size: .9rem; color: var(--ink-soft); line-height: 1.5; }
-
-.deck__key {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0 clamp(20px, 3vw, 40px);
-  margin-top: clamp(48px, 6vw, 80px);
-  padding-bottom: clamp(40px, 5vw, 64px);
-}
-.deck__key > div {
-  display: flex; gap: 16px; align-items: baseline;
-  padding-top: 18px;
-  border-top: 2px solid var(--navy-900);
-}
-.deck__key dt {
-  flex: 0 0 auto;
-  min-width: 1.6em;
-  font-family: "Caveat", cursive;
-  font-size: 2.2rem; font-weight: 700; line-height: .8;
-  color: #d3221a;
-}
-.deck__key dd { margin: 0; font-size: .95rem; color: var(--ink-soft); }
-.deck__key dd b { color: var(--navy-900); }
 
 /* =========================================================
    DÍA DE COMPETENCIA — cuenta regresiva
@@ -670,7 +644,6 @@ html:not(.js) .step__info, html:not(.js) .step__block { opacity: 1; transform: n
    KEYFRAMES
    ========================================================= */
 @keyframes startFlash { 0% { opacity: 0; } 10% { opacity: .38; } 100% { opacity: 0; } }
-@keyframes depPulse { 50% { transform: scale(1.25); } }
 
 /* =========================================================
    RESPONSIVE
@@ -683,7 +656,6 @@ html:not(.js) .step__info, html:not(.js) .step__block { opacity: 1; transform: n
   .path__head, .deck__head { grid-template-columns: 1fr; }
   .deck__scene { grid-template-columns: 1fr; }
   .pc { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
-  .deck__key { grid-template-columns: 1fr; gap: 18px; }
   .meet__grid { grid-template-columns: 1fr; }
   .meet__side { position: static; }
   .rl__res { right: calc(var(--sl) * 1.45 + 16px); }
@@ -956,10 +928,8 @@ html.js .run__shot.is-on img { transform: none; filter: none; }
   .step__block { min-height: 96px; }
   .path__tri p:not(.path__tri-tag) { display: none; }
 
-  /* entreno: pizarra y reloj, sin glosario */
+  /* entreno: pizarra y reloj */
   .pc__clock { width: min(100%, 260px); }
-  .pc__departs { display: none; }
-  .deck__key { display: none; }
 
   /* día de competencia: cada paso en una fila con su foto al lado */
   .cd { grid-template-columns: minmax(0, 1fr) 84px; column-gap: 14px; padding-bottom: 24px; }

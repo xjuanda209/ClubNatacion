@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Competición · Team SER+</title>
-  <meta name="description" content="Equipo competitivo Team SER+: formamos nadadores y triatletas para competir. Así se vive una final, la ruta al podio, cómo se entrena, el día de torneo y la prueba de nivel.">
+  <meta name="description" content="Equipo competitivo Team SER+: formamos nadadores y triatletas para competir. Así se vive una final, la ruta al podio, la actitud en cada entreno, el día de torneo y la prueba de nivel.">
   <meta name="theme-color" content="#071a45">
   <link rel="icon" type="image/png" href="assets/plus.png">
 
@@ -226,26 +226,28 @@
       </div>
     </section>
 
-    <!-- ============ ENTRENAMIENTO: pizarra + reloj de ritmo ============ -->
+    <!-- ============ ENTRENAMIENTO: pizarra + reloj de ritmo ============
+         Sin series, tiempos, volúmenes ni descansos: el plan de entrenamiento
+         es reservado del club. La pizarra muestra la actitud con que se entrena. -->
     <section class="deck" id="entrenamiento" aria-labelledby="deck-title">
       <div class="wrap deck__head">
-        <h2 class="h2 reveal" id="deck-title">Así se ve <span class="accent">un entreno.</span></h2>
-        <p class="deck__intro reveal">En la natación de competencia todo se escribe en la pizarra y se nada contra el reloj de ritmo. Toca una serie y mira cómo la lee un nadador.</p>
+        <h2 class="h2 reveal" id="deck-title">Así se vive <span class="accent">un entreno.</span></h2>
+        <p class="deck__intro reveal">El plan de cada sesión se queda en el equipo. En la pizarra, para todos, va la actitud con la que se entra al agua.</p>
       </div>
 
       <div class="wrap deck__scene">
         <div class="wb reveal">
           <div class="wb__board">
-            <p class="wb__head">Martes · Grupo competitivo</p>
+            <p class="wb__head">Hoy · Grupo competitivo</p>
             <ol class="wb__sets" id="wbSets">
-              <li><button class="set" type="button" aria-pressed="false" data-reps="1" data-int="0" data-dist="400" data-note="Nado continuo para soltar el cuerpo: sin salidas, respiración cómoda y brazada larga.">400 libre suave</button><small>calentamiento</small></li>
-              <li><button class="set" type="button" aria-pressed="false" data-reps="4" data-int="60" data-dist="50" data-note="Ejercicios de técnica. Salir cada minuto deja descanso de sobra para hacerlos bien.">4 × 50 técnica <em>@ 1:00</em></button></li>
-              <li><button class="set" type="button" aria-pressed="false" data-reps="8" data-int="100" data-dist="100" data-note="La serie principal, a ritmo de prueba. Si nadas cada 100 en 1:25, descansas 15 segundos.">8 × 100 libre <em>@ 1:40</em></button><small>ritmo de prueba</small></li>
-              <li><button class="set" type="button" aria-pressed="false" data-reps="6" data-int="75" data-dist="50" data-note="Patada con tabla: piernas fuertes para el final de la carrera.">6 × 50 patada <em>@ 1:15</em></button></li>
-              <li><button class="set" type="button" aria-pressed="false" data-reps="4" data-int="45" data-dist="25" data-note="Velocidad máxima desde el bloque, con descanso largo para que cada salida sea perfecta.">4 × 25 sprint <em>@ 0:45</em></button><small>desde el bloque</small></li>
-              <li><button class="set" type="button" aria-pressed="false" data-reps="1" data-int="0" data-dist="200" data-note="Vuelta a la calma: nado muy suave para recuperar.">200 suave</button><small>vuelta a la calma</small></li>
+              <li><button class="set" type="button" aria-pressed="false" data-note="Gorro, gafas y botella listos antes de la hora. El calentamiento también es parte del entreno.">Llegar a tiempo</button><small>y con todo listo</small></li>
+              <li><button class="set" type="button" aria-pressed="false" data-note="La indicación del entrenador vale más que el primer impulso.">Escuchar <em>antes de saltar</em></button></li>
+              <li><button class="set" type="button" aria-pressed="false" data-note="No se trata de cumplir metros: cada piscina tiene algo que mejorar.">Cada serie <em>con intención</em></button><small>nada en automático</small></li>
+              <li><button class="set" type="button" aria-pressed="false" data-note="El del carril de al lado no es un rival: es quien te empuja a ser más.">Animar al de al lado</button></li>
+              <li><button class="set" type="button" aria-pressed="false" data-note="La disciplina, entendida como amor por el progreso.">Si cuesta, <em>se termina</em></button></li>
+              <li><button class="set" type="button" aria-pressed="false" data-note="Cada entrenamiento es una oportunidad de construir carácter.">Salir mejor que como entré</button></li>
             </ol>
-            <p class="wb__total">Total: 2.000 m</p>
+            <p class="wb__total">Total: un día más cerca</p>
           </div>
           <div class="wb__tray" aria-hidden="true"><i class="mk mk--blue"></i><i class="mk mk--red"></i><i class="mk mk--black"></i><i class="wb__eraser"></i></div>
         </div>
@@ -273,10 +275,8 @@
               <circle r="198" fill="url(#pcCase)"/>
               <circle r="186" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
               <circle r="178" fill="url(#pcFace)"/>
-              <g id="pcArcs"></g>
               <g id="pcTicks"></g>
               <g id="pcNums"></g>
-              <g id="pcDeps"></g>
               <text class="pc__brand" y="58" text-anchor="middle">TEAM SER+</text>
               <text class="pc__brand pc__brand--sub" y="76" text-anchor="middle">RELOJ DE RITMO</text>
               <g id="pcMin"><path d="M-5 18 L-3 -112 L0 -118 L3 -112 L5 18 Z" fill="#111827"/></g>
@@ -290,19 +290,12 @@
             </svg>
           </div>
           <div class="pc__read" aria-live="polite">
-            <p class="pc__set" id="pcSet">8 × 100 libre @ 1:40</p>
-            <p class="pc__departs" id="pcDeparts"></p>
-            <p class="pc__next"><span class="pc__label">Próxima salida</span><span id="pcNext">—</span></p>
-            <p class="pc__note" id="pcNote"></p>
+            <p class="pc__label">En la pizarra</p>
+            <p class="pc__set" id="pcSet">Cada serie con intención</p>
+            <p class="pc__note" id="pcNote">No se trata de cumplir metros: cada piscina tiene algo que mejorar.</p>
           </div>
         </div>
       </div>
-
-      <dl class="wrap deck__key">
-        <div class="reveal"><dt>×</dt><dd><b>Repeticiones.</b> 8 × 100 son ocho piscinas de 100 metros.</dd></div>
-        <div class="reveal"><dt>@</dt><dd><b>Salida cada.</b> Con @ 1:40 sales cada minuto y cuarenta, sin importar cuánto tardes. Lo que sobra es tu descanso.</dd></div>
-        <div class="reveal"><dt>RP</dt><dd><b>Ritmo de prueba.</b> La velocidad a la que quieres nadar el día de la competencia.</dd></div>
-      </dl>
     </section>
 
     <!-- ============ DÍA DE COMPETENCIA ============ -->
@@ -405,7 +398,7 @@
             <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><use href="#i-wa"/></svg>
             Enviar por WhatsApp
           </button>
-          <p class="form__note">Al enviar se abre WhatsApp (@plusnatacio) con tu mensaje listo.</p>
+          <p class="form__note">Al enviar se abre WhatsApp (+57 323 438 0362) con tu mensaje listo.</p>
         </form>
       </div>
     </section>
@@ -429,14 +422,14 @@
         <a href="privacidad.html">Datos personales</a>
       </nav>
       <div class="footer__social">
-        <a href="https://wa.me/plusnatacio" data-wa-link target="_blank" rel="noopener" aria-label="WhatsApp de Team SER+: @plusnatacio">
+        <a href="https://wa.me/573234380362" data-wa-link target="_blank" rel="noopener" aria-label="WhatsApp de Team SER+: +57 323 438 0362">
           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-wa"/></svg>
         </a>
         <a class="footer__ig" href="https://www.instagram.com/sermasnatacion/" target="_blank" rel="noopener" aria-label="Instagram de Team SER+: @sermasnatacion">
           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-ig"/></svg>
         </a>
         <p class="footer__handles">
-          <a href="https://wa.me/plusnatacio" data-wa-link target="_blank" rel="noopener">WhatsApp · @plusnatacio</a>
+          <a href="https://wa.me/573234380362" data-wa-link target="_blank" rel="noopener">WhatsApp · +57 323 438 0362</a>
           <a href="https://www.instagram.com/sermasnatacion/" target="_blank" rel="noopener">Instagram · @sermasnatacion</a>
         </p>
       </div>
@@ -457,7 +450,7 @@
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-ig"/></svg>
       <span>Instagram</span>
     </a>
-    <a class="wa-float__btn wa-float__btn--wa" href="https://wa.me/plusnatacio" data-wa-link aria-label="Escríbenos por WhatsApp: @plusnatacio">
+    <a class="wa-float__btn wa-float__btn--wa" href="https://wa.me/573234380362" data-wa-link aria-label="Escríbenos por WhatsApp: +57 323 438 0362">
       <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><use href="#i-wa"/></svg>
       <span>WhatsApp</span>
     </a>

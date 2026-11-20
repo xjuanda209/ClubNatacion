@@ -225,6 +225,9 @@
             <stop offset="1" stop-color="#000" stop-opacity=".3"/>
           </linearGradient>
           <filter id="capSoft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2"/></filter>
+          <!-- Texto de los gorros: startOffset = (largo del arco − textLength) / 2
+               (arco A mide 131,4; arco B, 117,5). No usar text-anchor="middle" con
+               textLength: Safari centra con el ancho sin ajustar y se come las primeras letras. -->
           <path id="capArcA" d="M38 96 Q100 58 162 96"/>
           <path id="capArcB" d="M44 113 Q100 82 156 113"/>
           <symbol id="capBody" viewBox="0 0 200 160">
@@ -255,27 +258,27 @@
       <div class="deck" id="capDeck">
         <ol class="caps-row wrap">
           <li class="vcap reveal" style="--cap:#0b2463;--ink:#fff;--rd:0s">
-            <svg class="vcap__svg" viewBox="0 0 200 160" aria-hidden="true"><use href="#capBody"/><text class="vcap__print"><textPath href="#capArcA" startOffset="50%" text-anchor="middle" textLength="108" lengthAdjust="spacingAndGlyphs">RESPETO</textPath></text><text class="vcap__logo" x="100" y="121" text-anchor="middle">SER<tspan>+</tspan></text><use href="#capGloss"/></svg>
+            <svg class="vcap__svg" viewBox="0 0 200 160" aria-hidden="true"><use href="#capBody"/><text class="vcap__print"><textPath href="#capArcA" startOffset="11.7" textLength="108" lengthAdjust="spacingAndGlyphs">RESPETO</textPath></text><text class="vcap__logo" x="100" y="121" text-anchor="middle">SER<tspan>+</tspan></text><use href="#capGloss"/></svg>
             <h3 class="vcap__t">Respeto</h3><p>Por el deportista, la familia y el proceso.</p>
           </li>
           <li class="vcap reveal" style="--cap:#e3241b;--ink:#fff;--plus:#071a45;--rd:.07s">
-            <svg class="vcap__svg" viewBox="0 0 200 160" aria-hidden="true"><use href="#capBody"/><text class="vcap__print"><textPath href="#capArcA" startOffset="50%" text-anchor="middle" textLength="104" lengthAdjust="spacingAndGlyphs">PASIÓN</textPath></text><text class="vcap__logo" x="100" y="121" text-anchor="middle">SER<tspan>+</tspan></text><use href="#capGloss"/></svg>
+            <svg class="vcap__svg" viewBox="0 0 200 160" aria-hidden="true"><use href="#capBody"/><text class="vcap__print"><textPath href="#capArcA" startOffset="13.7" textLength="104" lengthAdjust="spacingAndGlyphs">PASIÓN</textPath></text><text class="vcap__logo" x="100" y="121" text-anchor="middle">SER<tspan>+</tspan></text><use href="#capGloss"/></svg>
             <h3 class="vcap__t">Pasión</h3><p>Por entrenar, por mejorar, por competir.</p>
           </li>
           <li class="vcap reveal" style="--cap:#f4f7fc;--ink:#071a45;--rd:.14s">
-            <svg class="vcap__svg" viewBox="0 0 200 160" aria-hidden="true"><use href="#capBody"/><text class="vcap__print"><textPath href="#capArcA" startOffset="50%" text-anchor="middle" textLength="122" lengthAdjust="spacingAndGlyphs">DISCIPLINA</textPath></text><text class="vcap__logo" x="100" y="121" text-anchor="middle">SER<tspan>+</tspan></text><use href="#capGloss"/></svg>
+            <svg class="vcap__svg" viewBox="0 0 200 160" aria-hidden="true"><use href="#capBody"/><text class="vcap__print"><textPath href="#capArcA" startOffset="4.7" textLength="122" lengthAdjust="spacingAndGlyphs">DISCIPLINA</textPath></text><text class="vcap__logo" x="100" y="121" text-anchor="middle">SER<tspan>+</tspan></text><use href="#capGloss"/></svg>
             <h3 class="vcap__t">Disciplina</h3><p>Entendida como amor por el progreso.</p>
           </li>
           <li class="vcap reveal" style="--cap:#1358e6;--ink:#fff;--rd:.21s">
-            <svg class="vcap__svg" viewBox="0 0 200 160" aria-hidden="true"><use href="#capBody"/><text class="vcap__print"><textPath href="#capArcA" startOffset="50%" text-anchor="middle" textLength="118" lengthAdjust="spacingAndGlyphs">HUMILDAD</textPath></text><text class="vcap__logo" x="100" y="121" text-anchor="middle">SER<tspan>+</tspan></text><use href="#capGloss"/></svg>
+            <svg class="vcap__svg" viewBox="0 0 200 160" aria-hidden="true"><use href="#capBody"/><text class="vcap__print"><textPath href="#capArcA" startOffset="6.7" textLength="118" lengthAdjust="spacingAndGlyphs">HUMILDAD</textPath></text><text class="vcap__logo" x="100" y="121" text-anchor="middle">SER<tspan>+</tspan></text><use href="#capGloss"/></svg>
             <h3 class="vcap__t">Humildad</h3><p>Reconocer que siempre se puede aprender más.</p>
           </li>
           <li class="vcap reveal" style="--cap:#ffd23a;--ink:#071a45;--rd:.28s">
-            <svg class="vcap__svg" viewBox="0 0 200 160" aria-hidden="true"><use href="#capBody"/><text class="vcap__print vcap__print--sm"><textPath href="#capArcA" startOffset="50%" text-anchor="middle" textLength="96" lengthAdjust="spacingAndGlyphs">TRABAJO</textPath></text><text class="vcap__print vcap__print--sm"><textPath href="#capArcB" startOffset="50%" text-anchor="middle" textLength="92" lengthAdjust="spacingAndGlyphs">EN EQUIPO</textPath></text><use href="#capGloss"/></svg>
+            <svg class="vcap__svg" viewBox="0 0 200 160" aria-hidden="true"><use href="#capBody"/><text class="vcap__print vcap__print--sm"><textPath href="#capArcA" startOffset="17.7" textLength="96" lengthAdjust="spacingAndGlyphs">TRABAJO</textPath></text><text class="vcap__print vcap__print--sm"><textPath href="#capArcB" startOffset="12.7" textLength="92" lengthAdjust="spacingAndGlyphs">EN EQUIPO</textPath></text><use href="#capGloss"/></svg>
             <h3 class="vcap__t">Trabajo en equipo</h3><p>El equipo es más fuerte que el individuo.</p>
           </li>
           <li class="vcap reveal" style="--cap:#48c8ff;--ink:#071a45;--rd:.35s">
-            <svg class="vcap__svg" viewBox="0 0 200 160" aria-hidden="true"><use href="#capBody"/><text class="vcap__print"><textPath href="#capArcA" startOffset="50%" text-anchor="middle" textLength="104" lengthAdjust="spacingAndGlyphs">ALEGRÍA</textPath></text><text class="vcap__logo" x="100" y="121" text-anchor="middle">SER<tspan>+</tspan></text><use href="#capGloss"/></svg>
+            <svg class="vcap__svg" viewBox="0 0 200 160" aria-hidden="true"><use href="#capBody"/><text class="vcap__print"><textPath href="#capArcA" startOffset="13.7" textLength="104" lengthAdjust="spacingAndGlyphs">ALEGRÍA</textPath></text><text class="vcap__logo" x="100" y="121" text-anchor="middle">SER<tspan>+</tspan></text><use href="#capGloss"/></svg>
             <h3 class="vcap__t">Alegría</h3><p>Entrenar debe sentirse como un privilegio, no como un peso.</p>
           </li>
         </ol>
@@ -599,7 +602,7 @@
           <p class="club-cta__p reveal">Escríbenos y te contamos horarios, categorías y cómo empezar.</p>
         </div>
         <div class="club-cta__actions reveal">
-          <a class="btn btn--white btn--lg" href="https://wa.me/plusnatacio" data-wa-link><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><use href="#i-wa"/></svg>
+          <a class="btn btn--white btn--lg" href="https://wa.me/573234380362" data-wa-link><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><use href="#i-wa"/></svg>
 Escríbenos por WhatsApp
 </a><a class="btn btn--ghost btn--lg" href="https://ig.me/m/sermasnatacion" data-ig-link><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><use href="#i-ig"/></svg>
 Instagram
@@ -628,14 +631,14 @@ Instagram
         <a href="privacidad.html">Datos personales</a>
       </nav>
       <div class="footer__social">
-        <a href="https://wa.me/plusnatacio" data-wa-link target="_blank" rel="noopener" aria-label="WhatsApp de Team SER+: @plusnatacio">
+        <a href="https://wa.me/573234380362" data-wa-link target="_blank" rel="noopener" aria-label="WhatsApp de Team SER+: +57 323 438 0362">
           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-wa"/></svg>
         </a>
         <a class="footer__ig" href="https://www.instagram.com/sermasnatacion/" target="_blank" rel="noopener" aria-label="Instagram de Team SER+: @sermasnatacion">
           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-ig"/></svg>
         </a>
         <p class="footer__handles">
-          <a href="https://wa.me/plusnatacio" data-wa-link target="_blank" rel="noopener">WhatsApp · @plusnatacio</a>
+          <a href="https://wa.me/573234380362" data-wa-link target="_blank" rel="noopener">WhatsApp · +57 323 438 0362</a>
           <a href="https://www.instagram.com/sermasnatacion/" target="_blank" rel="noopener">Instagram · @sermasnatacion</a>
         </p>
       </div>
@@ -656,7 +659,7 @@ Instagram
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-ig"/></svg>
       <span>Instagram</span>
     </a>
-    <a class="wa-float__btn wa-float__btn--wa" href="https://wa.me/plusnatacio" data-wa-link aria-label="Escríbenos por WhatsApp: @plusnatacio">
+    <a class="wa-float__btn wa-float__btn--wa" href="https://wa.me/573234380362" data-wa-link aria-label="Escríbenos por WhatsApp: +57 323 438 0362">
       <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><use href="#i-wa"/></svg>
       <span>WhatsApp</span>
     </a>
